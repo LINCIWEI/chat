@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io simple chat</title>
+    <link rel="stylesheet" href="/css/demo.css" />
+     <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body style="background-image: url('background.jpg');background-size: cover;">
+    <div class="centerit">
+   <div class="chat-container">
+  <aside>
+    <div class="top-bar" style="text-align: center; background-color: #333; padding: 10px 0;">
+  <h1 style="color: white;text-align:center;">&nbsp&nbsp&nbsp用户的ID是: <span id="userID"></span></h1>
+    </div>
+    <div class="conversations">
+      <div class="thread">
+        <div class="details">
+          <div class="inbox__people">
+            <div>
+            
+            </div>
+            <h4>Active users</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="top-bar"></div>
+    <div class="messages" id="messages">
+      <!-- 这里可以放入 main 内容 -->
+      <div class="messages__history"></div>
+        <div class="fallback"></div>
+        <div class="inbox__messages">
+         
+        </div>
+    </div>
+    <div class="bottom-bar">
+     
+        
+        <form class="message_form" style="background: none; padding: 0;">
+          <input type="text" class="msg-input message_form__input" placeholder="Type a message" />
+          <button class="message_form__button" type="submit" style="  
+          background-color: #4CAF50; /* 绿色 */
+          border: none;
+           color: white;
+          padding: 20px;
+         text-align: center;
+          text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 12px;
+          height: 61px; 
+          width: 91px; 
+  ">Enter</button>
+        </form>
+     
+    </div>
+  </main>
+</div>
+</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/client.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+  <script>
+
+</script>
+</html>

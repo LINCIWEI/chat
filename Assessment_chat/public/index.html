@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/demo.css">
+       
+    </head>
+    <body>
+        <input type="text" id="inputField">
+<button onclick="setUserID()">设置</button>
+
+
+
+        <p><a href = "chat.html">Chat</a></p>
+        
+        <script src="js/client.js" async defer></script>
+     
+
+<script>
+function setUserID() {
+    const inputValue = document.getElementById("inputField").value;
+    localStorage.setItem("userID", inputValue); // 将输入值存储在本地存储中
+    window.location.href = "chat.html"; // 重定向到显示ID的页面
+}
+</script>
+    </body>
+</html>
