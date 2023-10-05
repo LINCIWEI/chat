@@ -2,7 +2,7 @@ const express = require("express");
 const socket = require("socket.io");
 
 // App setup
-const PORT = 5000;
+const PORT = 5050;
 const app = express();
 const server = app.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
@@ -26,6 +26,7 @@ io.on("connection", function (socket) {
     activeUsers.add(data);
     //... is the the spread operator, adds to the set while retaining what was in there already
     io.emit("new user", [...activeUsers]);
+       socket.broadcast.emit("user entered", data);
   });
 
   socket.on("disconnect", function () {
@@ -37,4 +38,12 @@ io.on("connection", function (socket) {
       io.emit("chat message", data);
   });
 
+    socket.on("typing", function (userName) {
+  socket.broadcast.emit("user typing", userName);
+});
+
+socket.on("stop typing", function (userName) {
+  socket.broadcast.emit("user stop typing", userName);
+});
+    
 });

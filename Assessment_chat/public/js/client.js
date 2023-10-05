@@ -30,6 +30,12 @@ const newUserConnected = function (data) {
     socket.emit("new user", userName);
     //call
     addToUsersBox(userName);
+     displayEnterChatNotification(userName);
+};
+
+const displayEnterChatNotification = function (userName) {
+    // 使用浏览器的弹窗或者 toast 通知库来显示通知
+    alert(userName + " 进入了聊天室");
 };
 
 const addToUsersBox = function (userName) {
@@ -55,7 +61,11 @@ const addToUsersBox = function (userName) {
 };
 
 //call 
-newUserConnected();
+if(storedUserID){
+  newUserConnected();
+  
+  }
+
 
 //when a new user event is detected
 socket.on("new user", function (data) {
@@ -73,6 +83,19 @@ socket.on("user disconnected", function (userName) {
 const inputField = document.querySelector(".message_form__input");
 const messageForm = document.querySelector(".message_form");
 const messageBox = document.querySelector(".messages__history");
+const typingStatus = document.querySelector(".typing-status");
+
+
+inputField.addEventListener("input", () => {
+  const message = inputField.value;
+  if (message.trim() !== "") {
+    socket.emit("typing", userName);
+  } else {
+    socket.emit("stop typing", userName);
+  }
+});
+
+
 
 const addNewMessage = ({ user, message }) => {
   const time = new Date();
@@ -126,4 +149,20 @@ messageForm.addEventListener("submit", (e) => {
 
 socket.on("chat message", function (data) {
   addNewMessage({ user: data.nick, message: data.message });
+});
+
+socket.on("user entered", function (data) {
+    // 使用浏览器的弹窗或者 toast 通知库来显示通知
+     displayEnterChatNotification(data);;
+});
+
+socket.on("user disconnected", function (userName) {
+    alert(`用户 ${userName} 退出了聊天室`);
+});
+socket.on("user typing", function (userName) {
+  typingStatus.textContent = `${userName} is typing...`;
+});
+
+socket.on("user stop typing", function (userName) {
+  typingStatus.textContent = "";
 });
