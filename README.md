@@ -1,25 +1,28 @@
-### What is this?
-This `README.md` file is auto-created for all new projects.
+# Assessment work
+## illustration
+Our Node.js chat website, powered by Socket.io, offers real-time multi-user chat. Enjoy instant communication, see who's online, customize your username, and receive live typing notifications. Get alerts when users join or leave the chat. Join the conversation now!
 
-### Why am I here?
-This file opens automatically when you open a project. 
 
-If you do not create Guides, this `README.md` will be what automatically opens for students. You can edit this file by clicking on the pencil icon in the upper right corner.
+# instructions
+## Configuring the development environment
+Before you start working with the code, you need to configure your environment.
+I use node.js -14 and express so you need to install them.
+    
+    nvm install 14
+    npm install express
+    
 
-### How do I get started with Codio?
-Use this [Onboarding Guide](https://codio.com/home/starter-packs/2ae8501b-e5f7-4b07-8e9f-adb155fc6d10) for an interactive tutorial through the main features of Codio. Click on the link, click **Use Pack** and then click **Create** to add it to your projects.
+    
+## open programme
+Then we need to go into the document
 
-### How do I close this file?
-At the top of your workspace you will see tabs for each open file. Click the x on the right hand side of the tab that says **README.md**.
-![readMeTab](https://global.codio.com/platform/readme.resources/readMeTab.png)
+    cd Assessment_chat
+    node index.js
+    
+ ## Start to use to website
+Now that you are in the home page, you will see the title and welcome, and below it there is an input field where you can type your name and click start.Now that you have entered the home page, you will see the title and welcome, and there is an input field below, you can click your name and you will be taken to the chat page and start chatting. Type what you want to say in the input field and press Enter to send it, you can also mouse click on the green button next to it
 
-### I expected to see or edit learning materials.
-Select **Tools->Guide->Play** to view the Guide for this project.
-![playGuide](https://global.codio.com/platform/readme.resources/playGuide.png)
 
-Click on the **Open Guides Editor** icon to edit the Guide.
-![guideEdit](https://global.codio.com/platform/readme.resources/guideEdit.png)
 
-### How do I delete this file?
-To delete this `README.md` file, right-click (ctrl-click on a Mac) on the file name in the file list.
-![fileTree](https://global.codio.com/platform/readme.resources/fileTree.png)
+
+
